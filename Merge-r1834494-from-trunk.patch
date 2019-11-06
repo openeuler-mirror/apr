@@ -1,8 +1,7 @@
-# ./pullrev.sh 1834495
-http://svn.apache.org/viewvc?view=revision&revision=1834495
+This is an upstream patch from: http://svn.apache.org/viewvc?view=revision&revision=1834495
 
---- apr-1.6.3/buildconf
-+++ apr-1.6.3/buildconf
+--- 1.7.x/buildconf	2018/06/27 11:41:30	1834494
++++ 1.7.x/buildconf	2018/06/27 11:49:33	1834495
 @@ -112,8 +112,10 @@
  # Remove autoconf 2.5x's cache directory
  rm -rf autom4te*.cache
@@ -15,8 +14,8 @@ http://svn.apache.org/viewvc?view=revision&revision=1834495
  
  # Create RPM Spec file
  if [ -f `which cut` ]; then
---- apr-1.6.3/build/gen-build.py
-+++ apr-1.6.3/build/gen-build.py
+--- 1.7.x/build/gen-build.py	2018/06/27 11:41:30	1834494
++++ 1.7.x/build/gen-build.py	2018/06/27 11:49:33	1834495
 @@ -10,7 +10,10 @@
  
  
@@ -149,9 +148,9 @@ http://svn.apache.org/viewvc?view=revision&revision=1834495
      files.extend(map(clean_path, glob.glob(pat)))
    files.sort()
    return files
---- apr-1.6.3/build/buildcheck.sh
-+++ apr-1.6.3/build/buildcheck.sh
-@@ -4,7 +4,7 @@
+--- 1.7.x/build/buildcheck.sh	2018/06/27 11:41:30	1834494
++++ 1.7.x/build/buildcheck.sh	2018/06/27 11:49:33	1834495
+@@ -4,14 +4,14 @@
  res=0
  
  # any python
@@ -160,7 +159,6 @@ http://svn.apache.org/viewvc?view=revision&revision=1834495
  if test -z "$python"; then
    echo "buildconf: python not found."
    echo "           You need python installed"
-@@ -11,7 +11,7 @@
    echo "           to build APR from SVN."
    res=1
  else
@@ -168,4 +166,5 @@ http://svn.apache.org/viewvc?view=revision&revision=1834495
 +  py_version=`$python -c 'import sys; print(sys.version)' 2>&1|sed 's/ .*//;q'`
    echo "buildconf: python version $py_version (ok)"
  fi
+ 
  
