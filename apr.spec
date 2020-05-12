@@ -1,8 +1,8 @@
 %define aprver 1
 
 Name: apr
-Version: 1.6.5
-Release: 4
+Version: 1.7.0
+Release: 1
 Summary: Apache Portable Runtime.
 License: ASL 2.0 and BSD with advertising and ISC and BSD
 URL: http://apr.apache.org
@@ -12,11 +12,9 @@ Source1: apr-wrapper.h
 Patch0: apr-1.2.2-libdir.patch
 Patch1: apr-1.2.7-pkgconf.patch
 
-Patch6000: Merge-r1834494-from-trunk.patch
-Patch6001: test-testlock.c-test_timeoutcond-Increase-fudge-fact.patch
-Patch6002: Split-apr_pool_check_integrity-into-two-parts.patch
-Patch6003: Pool-debugging-fixes.patch
-Patch6004: Fix-pool-debugging-output-so-that-creation-events-ar.patch
+Patch6000: Split-apr_pool_check_integrity-into-two-parts.patch
+Patch6001: Pool-debugging-fixes.patch
+Patch6002: Fix-pool-debugging-output-so-that-creation-events-ar.patch
 
 BuildRequires: gcc autoconf libtool libuuid-devel python3 lksctp-tools-devel
 
@@ -100,6 +98,9 @@ make check
 %doc docs/incomplete_types docs/non_apr_programs
 
 %changelog
+* Mon May 11 2020 openEuler Buildteam <buildteam@openeuler.org> - 1.7.0-1
+- update to 1.7.0-1
+
 * Tue Dec 17 2019 openEuler Buildteam <buildteam@openeuler.org> - 1.6.5-4
 - quality enhancement synchronization github patch
 
