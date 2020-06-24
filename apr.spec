@@ -2,7 +2,7 @@
 
 Name: apr
 Version: 1.6.5
-Release: 4
+Release: 5
 Summary: Apache Portable Runtime.
 License: ASL 2.0 and BSD with advertising and ISC and BSD
 URL: http://apr.apache.org
@@ -12,11 +12,12 @@ Source1: apr-wrapper.h
 Patch0: apr-1.2.2-libdir.patch
 Patch1: apr-1.2.7-pkgconf.patch
 
-Patch6000: Merge-r1834494-from-trunk.patch
-Patch6001: test-testlock.c-test_timeoutcond-Increase-fudge-fact.patch
-Patch6002: Split-apr_pool_check_integrity-into-two-parts.patch
-Patch6003: Pool-debugging-fixes.patch
-Patch6004: Fix-pool-debugging-output-so-that-creation-events-ar.patch
+Patch0000: Merge-r1834494-from-trunk.patch
+Patch0001: test-testlock.c-test_timeoutcond-Increase-fudge-fact.patch
+Patch0002: Split-apr_pool_check_integrity-into-two-parts.patch
+Patch0003: Pool-debugging-fixes.patch
+Patch0004: Fix-pool-debugging-output-so-that-creation-events-ar.patch
+Patch0005: Bounds-check-human-readable-date-fields-credit-Stefa.patch
 
 BuildRequires: gcc autoconf libtool libuuid-devel python3 lksctp-tools-devel
 
@@ -100,6 +101,12 @@ make check
 %doc docs/incomplete_types docs/non_apr_programs
 
 %changelog
+* Wed Jun 24 2020 linwei<linwei54@huawei.com> - 1.6.5-5
+- Type: cves
+- ID: CVE-2017-12613
+- SUG: restart
+- DESC: fix CVE-2017-12613
+
 * Tue Dec 17 2019 openEuler Buildteam <buildteam@openeuler.org> - 1.6.5-4
 - quality enhancement synchronization github patch
 
