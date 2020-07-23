@@ -1,8 +1,8 @@
 %define aprver 1
 
 Name: apr
-Version: 1.6.5
-Release: 6
+Version: 1.7.0
+Release: 1
 Summary: Apache Portable Runtime.
 License: ASL 2.0 and BSD with advertising and ISC and BSD
 URL: http://apr.apache.org
@@ -11,11 +11,9 @@ Source1: apr-wrapper.h
 
 Patch0: apr-1.2.2-libdir.patch
 Patch1: apr-1.2.7-pkgconf.patch
-Patch2: Merge-r1834494-from-trunk.patch
-Patch3: test-testlock.c-test_timeoutcond-Increase-fudge-fact.patch
-Patch4: Split-apr_pool_check_integrity-into-two-parts.patch
-Patch5: Pool-debugging-fixes.patch
-Patch6: Fix-pool-debugging-output-so-that-creation-events-ar.patch
+Patch2: Split-apr_pool_check_integrity-into-two-parts.patch
+Patch3: Pool-debugging-fixes.patch
+Patch4: Fix-pool-debugging-output-so-that-creation-events-ar.patch
 
 BuildRequires: gcc autoconf libtool libuuid-devel python3 lksctp-tools-devel
 
@@ -99,6 +97,12 @@ make check
 %doc docs/incomplete_types docs/non_apr_programs
 
 %changelog
+* Thu Jul 23 2020 liuchenguang<liuchenguang4@huawei.com> - 1.7.0-1
+- Type: enhancement
+- ID: NA
+- SUG: NA
+- DESC: update to 1.7.0
+
 * Tue Jul 14 2020 linwei<linwei54@huawei.com> - 1.6.5-6
 - Type: bugfix
 - ID: NA
