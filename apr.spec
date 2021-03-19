@@ -2,7 +2,7 @@
 
 Name: apr
 Version: 1.7.0
-Release: 2
+Release: 3
 Summary: Apache Portable Runtime.
 License: ASL 2.0 and BSD with advertising and ISC and BSD
 URL: http://apr.apache.org
@@ -17,6 +17,7 @@ Patch4: Fix-pool-debugging-output-so-that-creation-events-ar.patch
 Patch5: memory-unix-apr_pools.c-apr_pool_cleanup_register.patch
 Patch6: Follow-up-to-r1675967-trunk-resp.-r1863202-1.7.x.patch
 Patch7: Register-the-pool-debug-log-cleanup-handler-after-em.patch
+Patch8: backport-CVE-2017-12613-Bounds-check-human-readable-date-fields.patch
 
 BuildRequires: gcc autoconf libtool libuuid-devel python3 lksctp-tools-devel
 
@@ -100,6 +101,9 @@ make check
 %doc docs/incomplete_types docs/non_apr_programs
 
 %changelog
+* Fri Mar 19 2021 yangzhuangzhuang <yangzhuangzhuang1@huawei.com> - 1.7.0-3
+- Fix CVE-2017-12613
+
 * Mon Jun 29 2020  linwei<linwei54@huawei.com> - 1.7.0-2
 - sync some patches from community
 
