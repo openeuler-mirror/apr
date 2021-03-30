@@ -2,7 +2,7 @@
 
 Name: apr
 Version: 1.7.0
-Release: 3
+Release: 4
 Summary: Apache Portable Runtime.
 License: ASL 2.0 and BSD with advertising and ISC and BSD
 URL: http://apr.apache.org
@@ -101,6 +101,10 @@ make check
 %doc docs/incomplete_types docs/non_apr_programs
 
 %changelog
+* Tue Mar 30 2021 yangzhuangzhuang <yangzhuangzhuang1@huawei.com> - 1.7.0-4
+- Rebuild for openEuler-rpm-config moving /usr/lib/rpm/openEuler/xxxx to 
+  /usr/lib/xxxx
+
 * Fri Mar 19 2021 yangzhuangzhuang <yangzhuangzhuang1@huawei.com> - 1.7.0-3
 - Fix CVE-2017-12613
 
