@@ -2,7 +2,7 @@
 
 Name: apr
 Version: 1.7.0
-Release: 3
+Release: 4
 Summary: Apache Portable Runtime.
 License: ASL 2.0 and BSD with advertising and ISC and BSD
 URL: http://apr.apache.org
@@ -15,6 +15,9 @@ Patch2: Split-apr_pool_check_integrity-into-two-parts.patch
 Patch3: Pool-debugging-fixes.patch
 Patch4: Fix-pool-debugging-output-so-that-creation-events-ar.patch
 Patch5: backport-CVE-2017-12613-Bounds-check-human-readable-date-fields.patch
+%ifarch riscv64
+Patch6: extend_timeout_for_sendfile_test.patch
+%endif
 
 BuildRequires: gcc autoconf libtool libuuid-devel python3 lksctp-tools-devel
 
@@ -98,6 +101,9 @@ make check
 %doc docs/incomplete_types docs/non_apr_programs
 
 %changelog
+* Mon Nov 29 2021 lvxiaoqian <xiaoqian@nj.iscas.ac.cn> -1.7.0-4
+- extend timeout for sendfile test on riscv
+
 * Tue Mar 30 2021 shenyangyang<shenyangyang4@huawei.com> - 1.7.0-3
 - Type:bugfix
 - ID:NA
